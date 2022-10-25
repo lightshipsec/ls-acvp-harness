@@ -1,0 +1,22 @@
+{
+    "algorithm": "ACVP-AES-CTR",
+    "revision": "1.0",
+    "keyLen": [
+        128,
+        192,
+        256
+    ],
+    "direction": [
+        "encrypt",
+        "decrypt"
+    ],
+    "payloadLen": [
+        {
+            "max": 128,
+            "min": 8,
+            "increment": 8
+        }
+    ],
+    "incrementalCounter": true,
+    "performCounterTests": true
+}

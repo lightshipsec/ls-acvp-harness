@@ -1,0 +1,36 @@
+{
+    "algorithm": "ACVP-AES-GCM",
+    "revision": "1.0",
+    "mode": "",
+    "ivGen": "internal",
+    "ivLen": [
+        96
+    ],
+    "aadLen": [
+        {
+            "max": 65536,
+            "min": 0,
+            "increment": 8
+        }
+    ],
+    "keyLen": [
+        128,
+        192,
+        256
+    ],
+    "tagLen": [
+        128
+    ],
+    "direction": [
+        "encrypt",
+        "decrypt"
+    ],
+    "ivGenMode": "8.2.2",
+    "payloadLen": [
+        {
+            "max": 65536,
+            "min": 8,
+            "increment": 8
+        }
+    ]
+}

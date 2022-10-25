@@ -1,0 +1,14 @@
+{
+    "algorithm": "DSA",
+    "revision": "1.0",
+    "mode": "sigGen",
+    "capabilities": [
+        {
+            "l": 2048,
+            "n": 256,
+            "hashAlg": [
+                "SHA2-256"
+            ]
+        }
+    ]
+}

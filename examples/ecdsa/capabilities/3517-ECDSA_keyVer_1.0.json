@@ -1,0 +1,10 @@
+{
+    "algorithm": "ECDSA",
+    "revision": "1.0",
+    "curve": [
+        "P-256",
+        "P-384",
+        "P-521"
+    ],
+    "mode": "keyVer"
+}

@@ -1,0 +1,131 @@
+{
+    "algorithm": "hmacDRBG",
+    "revision": "1.0",
+    "capabilities": [
+        {
+            "mode": "SHA-1",
+            "nonceLen": [
+                64
+            ],
+            "persoStringLen": [
+                {
+                    "max": 512,
+                    "min": 0,
+                    "increment": 128
+                }
+            ],
+            "entropyInputLen": [
+                128
+            ],
+            "returnedBitsLen": 640,
+            "additionalInputLen": [
+                {
+                    "max": 512,
+                    "min": 0,
+                    "increment": 128
+                }
+            ]
+        },
+        {
+            "mode": "SHA2-224",
+            "nonceLen": [
+                96
+            ],
+            "persoStringLen": [
+                {
+                    "max": 576,
+                    "min": 0,
+                    "increment": 192
+                }
+            ],
+            "entropyInputLen": [
+                192
+            ],
+            "returnedBitsLen": 896,
+            "additionalInputLen": [
+                {
+                    "max": 576,
+                    "min": 0,
+                    "increment": 192
+                }
+            ]
+        },
+        {
+            "mode": "SHA2-256",
+            "nonceLen": [
+                128
+            ],
+            "persoStringLen": [
+                {
+                    "max": 768,
+                    "min": 0,
+                    "increment": 256
+                }
+            ],
+            "entropyInputLen": [
+                256
+            ],
+            "returnedBitsLen": 1024,
+            "additionalInputLen": [
+                {
+                    "max": 768,
+                    "min": 0,
+                    "increment": 256
+                }
+            ]
+        },
+        {
+            "mode": "SHA2-384",
+            "nonceLen": [
+                128
+            ],
+            "persoStringLen": [
+                {
+                    "max": 768,
+                    "min": 0,
+                    "increment": 256
+                }
+            ],
+            "entropyInputLen": [
+                256
+            ],
+            "returnedBitsLen": 1536,
+            "additionalInputLen": [
+                {
+                    "max": 768,
+                    "min": 0,
+                    "increment": 256
+                }
+            ]
+        },
+        {
+            "mode": "SHA2-512",
+            "nonceLen": [
+                128
+            ],
+            "persoStringLen": [
+                {
+                    "max": 768,
+                    "min": 0,
+                    "increment": 256
+                }
+            ],
+            "entropyInputLen": [
+                256
+            ],
+            "returnedBitsLen": 2048,
+            "additionalInputLen": [
+                {
+                    "max": 768,
+                    "min": 0,
+                    "increment": 256
+                }
+            ]
+        }
+    ],
+    "reseedImplemented": true,
+    "predResistanceEnabled": [
+        false,
+        true
+    ]
+}

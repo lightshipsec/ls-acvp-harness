@@ -1,0 +1,65 @@
+[
+ {
+  "acvVersion": "1.0"
+ },
+ {
+  "vsId": 955832,
+  "algorithm": "ECDSA",
+  "mode": "keyVer",
+  "revision": "1.0",
+  "isSample": true,
+  "testGroups": [
+   {
+    "tgId": 1,
+    "tests": [
+     {
+      "tcId": 1,
+      "testPassed": true
+     },
+     {
+      "tcId": 2,
+      "testPassed": false
+     },
+     {
+      "tcId": 3,
+      "testPassed": false
+     }
+    ]
+   },
+   {
+    "tgId": 2,
+    "tests": [
+     {
+      "tcId": 4,
+      "testPassed": false
+     },
+     {
+      "tcId": 5,
+      "testPassed": false
+     },
+     {
+      "tcId": 6,
+      "testPassed": true
+     }
+    ]
+   },
+   {
+    "tgId": 3,
+    "tests": [
+     {
+      "tcId": 7,
+      "testPassed": true
+     },
+     {
+      "tcId": 8,
+      "testPassed": false
+     },
+     {
+      "tcId": 9,
+      "testPassed": false
+     }
+    ]
+   }
+  ]
+ }
+]

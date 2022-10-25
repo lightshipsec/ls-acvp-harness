@@ -1,0 +1,65 @@
+[
+ {
+  "acvVersion": "1.0"
+ },
+ {
+  "vsId": 955831,
+  "algorithm": "ECDSA",
+  "mode": "keyGen",
+  "revision": "1.0",
+  "isSample": true,
+  "testGroups": [
+   {
+    "tgId": 1,
+    "testType": "AFT",
+    "tests": [
+     {
+      "tcId": 1
+     },
+     {
+      "tcId": 2
+     },
+     {
+      "tcId": 3
+     }
+    ],
+    "curve": "P-256",
+    "secretGenerationMode": "testing candidates"
+   },
+   {
+    "tgId": 2,
+    "testType": "AFT",
+    "tests": [
+     {
+      "tcId": 4
+     },
+     {
+      "tcId": 5
+     },
+     {
+      "tcId": 6
+     }
+    ],
+    "curve": "P-384",
+    "secretGenerationMode": "testing candidates"
+   },
+   {
+    "tgId": 3,
+    "testType": "AFT",
+    "tests": [
+     {
+      "tcId": 7
+     },
+     {
+      "tcId": 8
+     },
+     {
+      "tcId": 9
+     }
+    ],
+    "curve": "P-521",
+    "secretGenerationMode": "testing candidates"
+   }
+  ]
+ }
+]

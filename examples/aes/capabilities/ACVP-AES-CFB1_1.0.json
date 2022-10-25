@@ -1,0 +1,13 @@
+{
+    "algorithm": "ACVP-AES-CFB1",
+    "revision": "1.0",
+    "keyLen": [
+        128,
+        192,
+        256
+    ],
+    "direction": [
+        "encrypt",
+        "decrypt"
+    ]
+}

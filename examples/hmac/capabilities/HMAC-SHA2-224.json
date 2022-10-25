@@ -1,0 +1,18 @@
+{
+    "algorithm": "HMAC-SHA2-224",
+    "revision": "1.0",
+    "keyLen": [
+        {
+            "min": 128,
+            "max": 2048,
+            "increment": 8
+        }
+    ],
+    "macLen": [
+        {
+            "min": 112,
+            "max": 224,
+            "increment": 8
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "algorithm": "ctrDRBG",
+    "revision": "1.0",
+    "capabilities": [
+        {
+            "mode": "AES-128",
+            "nonceLen": [
+                64
+            ],
+            "derFuncEnabled": true,
+            "persoStringLen": [
+                {
+                    "max": 512,
+                    "min": 0,
+                    "increment": 128
+                }
+            ],
+            "entropyInputLen": [
+                128
+            ],
+            "returnedBitsLen": 512,
+            "additionalInputLen": [
+                {
+                    "max": 512,
+                    "min": 0,
+                    "increment": 128
+                }
+            ]
+        },
+        {
+            "mode": "AES-192",
+            "nonceLen": [
+                96
+            ],
+            "derFuncEnabled": true,
+            "persoStringLen": [
+                {
+                    "max": 576,
+                    "min": 0,
+                    "increment": 192
+                }
+            ],
+            "entropyInputLen": [
+                192
+            ],
+            "returnedBitsLen": 768,
+            "additionalInputLen": [
+                {
+                    "max": 576,
+                    "min": 0,
+                    "increment": 192
+                }
+            ]
+        },
+        {
+            "mode": "AES-256",
+            "nonceLen": [
+                128
+            ],
+            "derFuncEnabled": true,
+            "persoStringLen": [
+                {
+                    "max": 512,
+                    "min": 0,
+                    "increment": 256
+                }
+            ],
+            "entropyInputLen": [
+                256
+            ],
+            "returnedBitsLen": 1024,
+            "additionalInputLen": [
+                {
+                    "max": 512,
+                    "min": 0,
+                    "increment": 256
+                }
+            ]
+        }
+    ],
+    "predResistanceEnabled": [
+        false,
+        true
+    ],
+    "reseedImplementedChange": true
+}

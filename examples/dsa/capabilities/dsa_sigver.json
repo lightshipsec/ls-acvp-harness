@@ -1,0 +1,20 @@
+{
+    "algorithm": "DSA",
+    "revision": "1.0",
+    "mode": "sigVer",
+    "capabilities": [
+        {
+            "l": 2048,
+            "n": 256,
+            "hashAlg": [
+                "SHA-1",
+                "SHA2-224",
+                "SHA2-256",
+                "SHA2-384",
+                "SHA2-512",
+                "SHA2-512/224",
+                "SHA2-512/256"
+            ]
+        }
+    ]
+}

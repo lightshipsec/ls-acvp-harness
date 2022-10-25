@@ -1,0 +1,34 @@
+{
+    "algorithm": "RSA",
+    "revision": "FIPS186-4",
+    "keyFormat": "standard",
+    "pubExpMode": "fixed",
+    "fixedPubExp": "010001",
+    "capabilities": [
+        {
+            "randPQ": "B.3.3",
+            "properties": [
+                {
+                    "modulo": 2048,
+                    "primeTest": [
+                        "tblC2"
+                    ]
+                },
+                {
+                    "modulo": 3072,
+                    "primeTest": [
+                        "tblC2"
+                    ]
+                },
+                {
+                    "modulo": 4096,
+                    "primeTest": [
+                        "tblC2"
+                    ]
+                }
+            ]
+        }
+    ],
+    "infoGeneratedByServer": true,
+    "mode": "keyGen"
+}

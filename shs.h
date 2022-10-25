@@ -1,0 +1,15 @@
+#ifndef _SHS_H
+#define _SHS_H
+
+ACVP_TEST_ALG_PROTO(shs_sha1);
+ACVP_TEST_ALG_PROTO(shs_sha2_224);
+ACVP_TEST_ALG_PROTO(shs_sha2_256);
+ACVP_TEST_ALG_PROTO(shs_sha2_384);
+ACVP_TEST_ALG_PROTO(shs_sha2_512);
+ACVP_TEST_ALG_PROTO(shs_sha3_224);
+ACVP_TEST_ALG_PROTO(shs_sha3_256);
+ACVP_TEST_ALG_PROTO(shs_sha3_384);
+ACVP_TEST_ALG_PROTO(shs_sha3_512);
+
+
+#endif

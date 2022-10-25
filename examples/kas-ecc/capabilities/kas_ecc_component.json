@@ -1,0 +1,26 @@
+{
+    "algorithm": "KAS-ECC",
+    "revision": "1.0",
+    "mode": "Component",
+    "scheme": {
+        "ephemeralUnified": {
+            "kasRole": [
+                "initiator",
+                "responder"
+            ],
+            "noKdfNoKc": {
+                "parameterSet": {
+                    "eb": {
+                        "curve": "P-224",
+                        "hashAlg": [
+                            "SHA2-224"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "function": [
+        "keyPairGen"
+    ]
+}

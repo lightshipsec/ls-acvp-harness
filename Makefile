@@ -29,7 +29,7 @@ ifeq ($(UNAME_S),Linux)
 endif
 
 ifeq (,$(wildcard ./openssl/include))
-	$(error Could not locate openssl headers, check that the openssl source folder is symlinked)
+$(error Could not locate openssl headers, check that the openssl source folder is symlinked)
 endif
 
 all: $(SOURCES) $(JSON)/libcjson.a $(EXECUTABLE)

@@ -28,6 +28,10 @@ ifeq ($(UNAME_S),Linux)
 	STRIP_FLAGS += --strip-all
 endif
 
+ifeq (,$(wildcard ./openssl/include))
+	$(error Could not locate openssl headers, check that the openssl source folder is symlinked)
+endif
+
 all: $(SOURCES) $(JSON)/libcjson.a $(EXECUTABLE)
 
 debug:

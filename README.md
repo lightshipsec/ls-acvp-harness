@@ -38,9 +38,9 @@ A FIPS enabled OpenSSL3.0 installation is required for use with this tool.  See 
 ```
 git clone --recurse-submodules https://github.com/lightshipsec/ls-acvp-harness.git 
 ```
-Create a symbolic link in the ls-acvp-harness directory to your openssl source code location:
+The code uses internal OpenSSL header files.  You'll need to create a symbolic link in the root ls-acvp-harness directory to your openssl source code location:
 ```
-ln -sf /path/to/openssl openssl
+ln -sf /path/to/opensslSRC openssl
 ```
 Point to your fips-enabled openssl_conf file: 
 ```

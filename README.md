@@ -19,7 +19,7 @@ This harness is built to support OpenSSL versions 3.x.
 | SHA3 | 224, 256, 384, 512 |
 | DSA | SigGen, SigVer, KeyGen, PQGVer, PQGGen|
 | ECDSA| SigGen, SigVer, KeyGen, KeyVer|
-| RSA| SigGen, SigVer|
+| RSA| SigGen, SigVer, KeyGen (B.3.6)|
 | KAS | FFC-Component, ECC-Component|
 | SafePrimes| KeyGen, KeyVer|
 | 3DES| ECB, CBC|

@@ -365,6 +365,7 @@ int ACVP_TEST_vs_rsa_keygen_fips186_4(cJSON *j, void *options, cJSON *out)  {
                 printf("iqmp: ");
                 print_bytearray(iqmp, iqmp_len);
 #endif
+
                 SAFEPUT(put_bytearray("xP", xP, xP_len, tc_output), "Unable to output xP for test case %d in test group %d\n", tcId, tgId);
                 SAFEPUT(put_bytearray("xQ", xQ, xQ_len, tc_output), "Unable to output xQ for test case %d in test group %d\n", tcId, tgId);
                 SAFEPUT(put_bytearray("xP1", xP1, xP1_len, tc_output), "Unable to output xP1 for test case %d in test group %d\n", tcId, tgId);
@@ -375,9 +376,13 @@ int ACVP_TEST_vs_rsa_keygen_fips186_4(cJSON *j, void *options, cJSON *out)  {
                 SAFEPUT(put_bytearray("e", e, e_len, tc_output), "Unable to output e for test case %d in test group %d\n", tcId, tgId);
                 SAFEPUT(put_bytearray("p", p, p_len, tc_output), "Unable to output p for test case %d in test group %d\n", tcId, tgId);
                 SAFEPUT(put_bytearray("q", q, q_len, tc_output), "Unable to output q for test case %d in test group %d\n", tcId, tgId);
-                SAFEPUT(put_bytearray("dmp1", dmp1, dmp1_len, tc_output), "Unable to output dmp1 for test case %d in test group %d\n", tcId, tgId);
-                SAFEPUT(put_bytearray("dmq1", dmq1, dmq1_len, tc_output), "Unable to output dmq1 for test case %d in test group %d\n", tcId, tgId);
-                SAFEPUT(put_bytearray("iqmp", iqmp, iqmp_len, tc_output), "Unable to output iqmp for test case %d in test group %d\n", tcId, tgId);
+                if(!strcasecmp(keyFormat->valuestring, "standard")) {
+                    SAFEPUT(put_bytearray("d", d, d_len, tc_output), "Unable to output d for test case %d in test group %d\n", tcId, tgId);
+                }else if(!strcasecmp(keyFormat->valuestring, "crt"))  {
+                    SAFEPUT(put_bytearray("dmp1", dmp1, dmp1_len, tc_output), "Unable to output dmp1 for test case %d in test group %d\n", tcId, tgId);
+                    SAFEPUT(put_bytearray("dmq1", dmq1, dmq1_len, tc_output), "Unable to output dmq1 for test case %d in test group %d\n", tcId, tgId);
+                    SAFEPUT(put_bytearray("iqmp", iqmp, iqmp_len, tc_output), "Unable to output iqmp for test case %d in test group %d\n", tcId, tgId);
+                }
             }
 
             /* Free structures here */
@@ -569,6 +574,7 @@ int ACVP_TEST_vs_rsa_siggen_fips186_4(cJSON *j, void *options, cJSON *out)  {
                    || !(md_ctx = EVP_MD_CTX_new())
                    || !EVP_DigestSignInit_ex(md_ctx, &pkey_ctx, hashAlg->valuestring, NULL, provider_str, rsa_pkey, NULL)
                    || !EVP_PKEY_CTX_set_params(pkey_ctx, params)
+                   || !(sig_len = EVP_PKEY_get_size(rsa_pkey))
                    || !EVP_DigestSign(md_ctx, sig, &sig_len, msg, msg_len))
                         goto error_die;
 

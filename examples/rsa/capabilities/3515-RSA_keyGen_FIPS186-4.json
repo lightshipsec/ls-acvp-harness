@@ -5,24 +5,13 @@
     "pubExpMode": "random",
     "capabilities": [
         {
-            "randPQ": "B.3.3",
+            "randPQ": "B.3.6",
             "properties": [
-                {
-                    "modulo": 2048,
-                    "primeTest": [
-                        "tblC2"
-                    ]
-                },
                 {
                     "modulo": 3072,
                     "primeTest": [
-                        "tblC2"
-                    ]
-                },
-                {
-                    "modulo": 4096,
-                    "primeTest": [
-                        "tblC2"
+                        "tblC2" ,
+			"tblC3"
                     ]
                 }
             ]

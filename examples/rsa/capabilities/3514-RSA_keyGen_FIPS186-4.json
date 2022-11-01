@@ -6,7 +6,7 @@
     "fixedPubExp": "010001",
     "capabilities": [
         {
-            "randPQ": "B.3.3",
+            "randPQ": "B.3.6",
             "properties": [
                 {
                     "modulo": 2048,

@@ -1,6 +1,8 @@
 {
     "algorithm": "RSA",
     "revision": "FIPS186-4",
+    "pubExpMode": "fixed",
+    "fixedPubExp": "010001",
     "capabilities": [
         {
             "sigType": "pkcs1v1.5",

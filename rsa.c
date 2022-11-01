@@ -526,6 +526,8 @@ int ACVP_TEST_vs_rsa_siggen_fips186_4(cJSON *j, void *options, cJSON *out)  {
                || !pkey_get_bn_bytes(rsa_pkey, OSSL_PKEY_PARAM_RSA_E, &e, &e_len))
                     goto error_die;
 
+            
+
             /* Dump out the properties of the keys we are using */
 #ifdef TRACE
             printf("N: ");
@@ -561,6 +563,7 @@ int ACVP_TEST_vs_rsa_siggen_fips186_4(cJSON *j, void *options, cJSON *out)  {
                 char *padding = OSSL_PKEY_RSA_PAD_MODE_NONE;
                 if(!strcasecmp(sigType->valuestring, "pkcs1v1.5")) padding = OSSL_PKEY_RSA_PAD_MODE_PKCSV15;
                 if(!strcasecmp(sigType->valuestring, "pss"))        padding = OSSL_PKEY_RSA_PAD_MODE_PSS;
+                if(!strcasecmp(sigType->valuestring, "ansx9.31"))        padding = OSSL_PKEY_RSA_PAD_MODE_X931;
 
                 OSSL_PARAM params[4] = {0}, *p = params;
                 *(p++) = OSSL_PARAM_construct_utf8_string(OSSL_SIGNATURE_PARAM_PAD_MODE, padding, 0);

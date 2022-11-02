@@ -38,7 +38,7 @@ A FIPS enabled OpenSSL3.0 installation is required for use with this tool.  See 
 ```
 git clone --recurse-submodules https://github.com/lightshipsec/ls-acvp-harness.git 
 ```
-The code uses internal OpenSSL header files.  You'll need to create a symbolic link in the root ls-acvp-harness directory to your openssl source code location:
+The code uses internal OpenSSL header files.  You will need to create a symbolic link in the root ls-acvp-harness directory to your openssl source code location:
 ```
 ln -sf /path/to/opensslSRC openssl
 ```
@@ -55,11 +55,11 @@ Test vectors must first be acquired from ACVP server.
 
 To process a vector set, simply use -i to provide the test vectors to process and -o to specify the output location:
 
-```./acvpt -i test_vectors.jon -o output_vectors.json```
+```./acvpt -i test_vectors.json -o output_vectors.json```
 
 # OpenSSL 3.x Installation
 
-First clone the OpenSSL 3.x repository you will to install.  (For example, 3.0.1 below)
+First clone the OpenSSL 3.x repository you will install.  (For example, 3.0.1 below)
 
 `git clone -b openssl-3.0.1 --single-branch https://github.com/openssl/openssl.git openssl`
 

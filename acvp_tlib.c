@@ -22,6 +22,9 @@ void raise_error(int code)  {
     //print openssl error stack
     ERR_print_errors_fp(stderr);
     switch(code){
+        case 1000:
+            printf("Error:  Algorithm or mode not supported\n");
+            break;
         case 1001: 
             printf("Error reading input vector file\n");
             break;
@@ -87,7 +90,8 @@ int ACVP_JSON_get_alg(cJSON *j)  {
     else if (!strcasecmp(algStr->valuestring, "ACVP-AES-CFB8")) alg = ACVP_ALG_AES_CFB8;
     else if (!strcasecmp(algStr->valuestring, "ACVP-AES-CFB128")) alg = ACVP_ALG_AES_CFB128;
     else if (!strcasecmp(algStr->valuestring, "ACVP-AES-GCM")) alg = ACVP_ALG_AES_GCM;
-    else if (!strcasecmp(algStr->valuestring, "ACVP-AES-KW")) alg = ACVP_ALG_AES_KW;
+    else if (!strcasecmp(algStr->valuestring, "ACVP-AES-OFB")) alg = ACVP_ALG_AES_OFB;
+    //else if (!strcasecmp(algStr->valuestring, "ACVP-AES-KW")) alg = ACVP_ALG_AES_KW;
 
     else if (!strcasecmp(algStr->valuestring, "SHA-1")) alg = ACVP_ALG_SHS_SHA1;
 
@@ -187,6 +191,7 @@ unsigned int ACVP_JSON_get_alg_revision(cJSON *j)  {
     TRACE_PUSH;
     cJSON *revision = NULL;
     SAFEGET(get_string_object(&revision, j, "revision"), "revision missing in JSON\n");
+    printf("Revision: %s\n",revision->valuestring);
 error_die:
     TRACE_POP;
     return _alg_revision_table(revision->valuestring);
@@ -207,8 +212,11 @@ int ACVP_JSON_output_algorithm_and_mode(cJSON *in, cJSON *out)  {
     SAFEGET(get_string_object(&alg, in, "algorithm"), "algorithm missing in JSON\n");
     printf("Using algorithm: %s\n",alg->valuestring);
     SAFEPUT(put_string("algorithm", alg->valuestring, out), "Unable to add algorithm to output JSON\n");
-    if(get_string_object(&mode, in, "mode") == 0)  /* Found it */
+    if(get_string_object(&mode, in, "mode") == 0){
+        /* Found it */
+        printf("Mode: %s\n",mode->valuestring);
         SAFEPUT(put_string("mode", mode->valuestring, out), "Unable to add mode to output JSON\n");
+    } 
 
     return 1;
 error_die:

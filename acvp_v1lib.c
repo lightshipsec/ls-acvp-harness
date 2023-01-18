@@ -36,14 +36,15 @@ int ACVP_v1_execute_tests(cJSON *j, void *options, cJSON *out) {
             case ACVP_ALG_AES_CBC: ret = ACVP_TEST_vs_aes_cbc(vs, options, response); break;
             case ACVP_ALG_AES_CTR: ret = ACVP_TEST_vs_aes_ctr(vs, options, response); break;
             case ACVP_ALG_AES_GCM: ret = ACVP_TEST_vs_aes_gcm(vs, options, response); break;
+            case ACVP_ALG_AES_OFB: ret = ACVP_TEST_vs_aes_ofb(vs, options, response); break;
             case ACVP_ALG_AES_CFB1: ret = ACVP_TEST_vs_aes_cfb1(vs, options, response); break;
             case ACVP_ALG_AES_CFB8: ret = ACVP_TEST_vs_aes_cfb8(vs, options, response); break;
             case ACVP_ALG_AES_CFB128: ret = ACVP_TEST_vs_aes_cfb128(vs, options, response); break;
-#if 0
-            case ACVP_ALG_AES_OFB: ret = ACVP_TEST_vs_aes_ofb(vs, options); break;
-#endif
-            case ACVP_ALG_AES_KW: ret = ACVP_TEST_vs_aes_kw(vs, options, response); break;
 
+#if 0
+            case ACVP_ALG_AES_KW: ret = ACVP_TEST_vs_aes_kw(vs, options, response); break;
+#endif
+            
             case ACVP_ALG_SHS_SHA1: ret = ACVP_TEST_vs_shs_sha1(vs, options, response); break;
             case ACVP_ALG_SHS_SHA2_224: ret = ACVP_TEST_vs_shs_sha2_224(vs, options, response); break;
             case ACVP_ALG_SHS_SHA2_256: ret = ACVP_TEST_vs_shs_sha2_256(vs, options, response); break;
@@ -76,7 +77,8 @@ int ACVP_v1_execute_tests(cJSON *j, void *options, cJSON *out) {
             case ACVP_ALG_TDES_ECB: ret = ACVP_TEST_vs_tdes_ecb(vs, options, response); break;
             case ACVP_ALG_TDES_CBC: ret = ACVP_TEST_vs_tdes_cbc(vs, options, response); break;
 
-            default: raise_error(/*TBD code */0);
+            default: raise_error(1000);
+                goto error_die;
         }
 
         report_test_result(ACVP_JSON_get_alg(vs), ret);

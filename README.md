@@ -12,7 +12,7 @@ This harness is built to support OpenSSL versions 3.x.
 
 | Algorithm | Modes |
 |---------|---------|
-| AES | CFB(-1,-8,-128),CTR,GCM|
+| AES | CFB(-1,-8,-128),CTR,GCM,OFB|
 | DRBG| ctr-,hash-,hmac-|
 | SHA1| |
 | SHA2 | 224, 256, 384, 512 |
